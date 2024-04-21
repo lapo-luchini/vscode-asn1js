@@ -72,7 +72,7 @@ function activate(context) {
                 <textarea id="area" rows="8"></textarea>
                 <br>
                 <br>
-                <label title="can be slow with big files"><input type="checkbox" id="wantHex" checked="checked"> with hex dump</label>
+                <label title="can be slow with big files"><input type="checkbox" id="wantHex"> with hex dump</label>
                 <label title="can be slow with big files"><input type="checkbox" id="trimHex" checked="checked"> trim big chunks</label>
                 <label title="can be slow with big files"><input type="checkbox" id="wantDef" checked="checked"> with definitions</label>
                 <input id="butDecode" type="button" value="decode">
@@ -114,14 +114,11 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('asn1js.decode', function () {
         // The code you place here will be executed every time your command is executed
 
-        // const asn1 = ASN1.decode(Hex.decode('06032B6570'));
-        // const dom = asn1.toDOM().innerHTML;
-
-        // Display a message box to the user
-        //vscode.window.showInformationMessage('Hello World from asn1js: ' + asn1.content());
-
         createPanel();
-        panel.webview.postMessage({ command: 'decode', content: '06032B6570' });
+
+        const editor = vscode.window.activeTextEditor;
+        if (editor)
+            panel.webview.postMessage({ command: 'decode', content: editor.document.getText() });
     });
 
     context.subscriptions.push(disposable);
