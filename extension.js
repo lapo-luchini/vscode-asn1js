@@ -44,6 +44,8 @@ function activate(context) {
             },
         );
 
+        panel.onDidDispose(() => { panel = null; });
+
         const onDiskPath = vscode.Uri.joinPath(context.extensionUri, 'static');
         const baseURI = panel.webview.asWebviewUri(onDiskPath);
 
