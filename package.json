@@ -1,10 +1,10 @@
 {
-  "name": "asn1js",
+  "name": "lapo.asn1js",
   "displayName": "asn1js",
-  "description": "Decode ASN.1 content and show it in a tree view",
+  "description": "Decode ASN.1 content inside VSCode",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.87.0"
+    "vscode": "^1.88.0"
   },
   "categories": [
     "Other"
