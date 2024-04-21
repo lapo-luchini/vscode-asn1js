@@ -27,9 +27,9 @@ This extension contributes the following settings:
 * `myExtension.enable`: Enable/disable this extension.
 * `myExtension.thing`: Set to `blah` to do something.
 
-## Installation
+## Developer installation
 
-You can install locally this extension with the following commands:
+You can test (and develop) this extension locally with the following commands:
 
 ```sh
 $ https://github.com/lapo-luchini/vscode-asn1js.git
@@ -37,6 +37,8 @@ $ cd vscode-asn1js/static
 $ wget https://asn1js.eu/asn1js.zip
 $ unzip asn1js.zip
 ```
+
+You can now open the folder in VSCode and press F5 to execute a new VSCode session which includes the extension.
 
 ## Known Issues
 
