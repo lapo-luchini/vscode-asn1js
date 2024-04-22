@@ -43,7 +43,7 @@ You can now open the folder in VSCode and press F5 to execute a new VSCode sessi
 
 ## Known Issues
 
-- When the panel loses focus it gets rendered from scratch and loses the content.
+- Hex view is maybe too much with low width
 
 ## Release Notes
 
