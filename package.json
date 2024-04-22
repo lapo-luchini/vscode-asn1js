@@ -1,7 +1,7 @@
 {
   "name": "asn1js",
   "displayName": "asn1js",
-  "description": "Decode ASN.1 content inside VSCode",
+  "description": "Decode ASN.1 content",
   "publisher": "lapo",
   "repository": {
     "type": "github",

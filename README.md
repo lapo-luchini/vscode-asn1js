@@ -4,28 +4,13 @@ Using this extension you can decode ASN.1 data directly in your editor.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+When you have an editor open with ASN.1 content (in either a PEM armor, or raw Base64, or raw hexadecimal) you can decode it by using the "ASN.1 decode" command.
 
-For example if there is an image subfolder under your extension project workspace:
+<video src="https://asn1js.eu/vscode-asn1js.mp4" title="example usage" controls ></video>
 
-\!\[feature X\]\(images/feature-x.png\)
+## TODO
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+This document is currently incomplete.
 
 ## Developer installation
 
