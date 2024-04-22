@@ -109,6 +109,7 @@ function activate(context) {
         // The code you place here will be executed every time your command is executed
 
         createPanel();
+        panel.reveal();
 
         const editor = vscode.window.activeTextEditor;
         if (editor)
