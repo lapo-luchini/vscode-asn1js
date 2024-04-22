@@ -1,8 +1,14 @@
 {
-  "name": "lapo.asn1js",
+  "name": "asn1js",
   "displayName": "asn1js",
   "description": "Decode ASN.1 content inside VSCode",
-  "version": "0.0.1",
+  "publisher": "lapo",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/lapo-luchini/vscode-asn1js"
+  },
+  "icon": "icon.png",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.88.0"
   },
