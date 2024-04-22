@@ -28,7 +28,7 @@ function activate(context) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "asn1js" is now active!');
+    //console.log('Congratulations, your extension "asn1js" is now active!');
 
     function createPanel() {
         if (panel) return;
@@ -53,7 +53,8 @@ function activate(context) {
             <html>
             <head>
                 <title>ASN.1 JavaScript decoder</title>
-                <link rel="stylesheet" href="${baseURI}/index.css" type="text/css" id="theme-base">
+                <base href="${baseURI}/index.html">
+                <link rel="stylesheet" href="index.css" type="text/css" id="theme-base">
                 <link rel="icon" type="image/svg+xml" sizes="192x192" href="favicon.svg">
             </head>
             <body>
@@ -89,15 +90,6 @@ function activate(context) {
                 <tr><td>Drag or load file:</td><td><input type="file" id="file"></td></tr>
                 <tr><td>Load examples:</td><td>
                     <select id="examples">
-                    <option value="sig-p256-der.p7m">PKCS#7/CMS attached signature (DER)</option>
-                    <option value="sig-p256-ber.p7m">PKCS#7/CMS attached signature (BER)</option>
-                    <option value="sig-rsa1024-sha1.p7s">PKCS#7/CMS detached signature (old)</option>
-                    <option value="letsencrypt-x3.cer">X.509 certificate: Let's Encrypt X3</option>
-                    <option value="ed25519.cer">X.509 certificate: ed25519 (RFC 8410)</option>
-                    <option value="pkcs1.pem">PKCS#1 RSA key (RFC 8017)</option>
-                    <option value="pkcs8-rsa.pem">PKCS#8 RSA key (RFC 5208)</option>
-                    <option value="pkcs10.pem">PKCS#10 certification request (RFC 2986)</option>
-                    <option value="cmpv2.b64">CMP PKI message (RFC 4210)</option>
                     </select>
                     <input id="butExample" type="button" value="load"><br>
                 </td></tr>
@@ -105,7 +97,7 @@ function activate(context) {
                 </table>
                 <select id="tags"><option>[select tag]</option></select>
             </form>
-            <script type="module" src="${baseURI}/indexVSCode.js"></script>
+            <script type="module" src="indexVSCode.js"></script>
             </body>
             </html>`;
     }

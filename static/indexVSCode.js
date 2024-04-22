@@ -1,3 +1,6 @@
+const isDark = document.body.classList.contains('vscode-dark');
+localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
 import * as web from './index.js';
 
 window.addEventListener('message', event => {
