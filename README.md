@@ -36,13 +36,14 @@ $ https://github.com/lapo-luchini/vscode-asn1js.git
 $ cd vscode-asn1js/static
 $ wget https://asn1js.eu/asn1js.zip
 $ unzip asn1js.zip
+$ rm asn1js.zip
 ```
 
 You can now open the folder in VSCode and press F5 to execute a new VSCode session which includes the extension.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- When the panel loses focus it gets rendered from scratch and loses the content.
 
 ## Release Notes
 
