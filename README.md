@@ -6,7 +6,7 @@ Using this extension you can decode ASN.1 data directly in your editor.
 
 When you have an editor open with ASN.1 content (in either a PEM armor, or raw Base64, or raw hexadecimal) you can decode it by using the "ASN.1 decode" command.
 
-<video src="https://asn1js.eu/vscode-asn1js.mp4" title="example usage" controls ></video>
+![example usage](https://asn1js.eu/vscode-asn1js.gif)
 
 ## TODO
 
