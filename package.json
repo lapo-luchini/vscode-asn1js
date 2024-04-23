@@ -8,7 +8,7 @@
     "url": "https://github.com/lapo-luchini/vscode-asn1js"
   },
   "icon": "icon.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.88.0"
   },
