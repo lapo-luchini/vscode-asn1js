@@ -3,20 +3,36 @@
   "displayName": "asn1js",
   "description": "Decode ASN.1 content",
   "publisher": "lapo",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/lapo-luchini/vscode-asn1js"
-  },
-  "icon": "icon.png",
   "version": "0.1.1",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ASN",
+    "ASN.1",
+    "ASN1",
+    "DER",
+    "BER"
+  ],
+  "license": "ISC",
   "engines": {
     "vscode": "^1.88.0"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lapo-luchini/vscode-asn1js.git"
+  },
+  "icon": "icon.png",
   "main": "./extension.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
   "contributes": {
     "commands": [
       {
@@ -25,14 +41,5 @@
       }
     ]
   },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "pnpm run lint",
-    "test": "vscode-test"
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0"
-  }
+  "activationEvents": []
 }
