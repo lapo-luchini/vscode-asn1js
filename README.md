@@ -17,7 +17,7 @@ This document is currently incomplete.
 You can test (and develop) this extension locally with the following commands:
 
 ```sh
-$ https://github.com/lapo-luchini/vscode-asn1js.git
+$ git clone https://github.com/lapo-luchini/vscode-asn1js.git
 $ cd vscode-asn1js/static
 $ wget https://asn1js.eu/asn1js.zip
 $ unzip asn1js.zip
