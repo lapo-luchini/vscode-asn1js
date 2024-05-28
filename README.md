@@ -10,7 +10,8 @@ When you have an editor open with ASN.1 content (in either a PEM armor, or raw B
 
 ## TODO
 
-This document is currently incomplete.
+- This document is currently incomplete
+- Add tests to this extension
 
 ## Developer installation
 
@@ -21,7 +22,7 @@ $ git clone https://github.com/lapo-luchini/vscode-asn1js.git
 $ cd vscode-asn1js/static
 $ wget https://asn1js.eu/asn1js.zip
 $ unzip asn1js.zip
-$ rm asn1js.zip
+$ rm -rf asn1js.zip examples index-local.html
 ```
 
 You can now open the folder in VSCode and press F5 to execute a new VSCode session which includes the extension.
@@ -34,16 +35,13 @@ You can now open the folder in VSCode and press F5 to execute a new VSCode sessi
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.1.3
+- Fix missing files
 
-Initial release of ...
+### 0.1.2
+- New tree mode
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+### 0.1.1
+- Initial release
 
 ---

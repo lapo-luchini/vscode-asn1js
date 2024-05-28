@@ -50,10 +50,12 @@ function activate(context) {
         const baseURI = panel.webview.asWebviewUri(onDiskPath);
 
         panel.webview.html = `<!DOCTYPE html>
-            <html>
+            <html data-theme="dark">
             <head>
                 <title>ASN.1 JavaScript decoder</title>
                 <base href="${baseURI}/index.html">
+                <meta name="theme-color" content="#0d1116" media="(prefers-color-scheme: dark)">
+                <meta name="theme-color" content="#C0C0C0" media="(prefers-color-scheme: light)">
                 <link rel="stylesheet" href="index.css" type="text/css" id="theme-base">
                 <link rel="icon" type="image/svg+xml" sizes="192x192" href="favicon.svg">
             </head>
