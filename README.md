@@ -35,6 +35,10 @@ You can now open the folder in VSCode and press F5 to execute a new VSCode sessi
 
 Users appreciate release notes as you update your extension.
 
+### 0.1.4
+- Properly ignore files
+- Remove old "hide subtree" menu option
+
 ### 0.1.3
 - Fix missing files
 
