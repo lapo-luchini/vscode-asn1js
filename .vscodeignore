@@ -1,6 +1,8 @@
 _MTN/
 .vscode/
-static/
-asn1js-*.vsix
+extension/
+.mtn-ignore
+.gitignore
+mirror_to_github.sh
 # Artifacts from mirror_to_github.sh
 git-*.txt
