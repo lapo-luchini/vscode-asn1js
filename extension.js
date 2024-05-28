@@ -52,16 +52,15 @@ function activate(context) {
         panel.webview.html = `<!DOCTYPE html>
             <html data-theme="dark">
             <head>
-                <title>ASN.1 JavaScript decoder</title>
                 <base href="${baseURI}/index.html">
                 <meta name="theme-color" content="#0d1116" media="(prefers-color-scheme: dark)">
                 <meta name="theme-color" content="#C0C0C0" media="(prefers-color-scheme: light)">
-                <link rel="stylesheet" href="index.css" type="text/css" id="theme-base">
+                <title>ASN.1 JavaScript decoder</title>
+                <link rel="stylesheet" href="index.css" type="text/css">
                 <link rel="icon" type="image/svg+xml" sizes="192x192" href="favicon.svg">
             </head>
             <body>
             <div id="contextmenu">
-                <button id="btnHideTree">Hide subtree</button>
                 <button id="btnCopyHex">Copy hex dump</button>
                 <button id="btnCopyB64">Copy Base64</button>
                 <button id="btnCopyTree">Copy subtree</button>
