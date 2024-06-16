@@ -71,33 +71,28 @@ function activate(context) {
                     <div id="dump"></div>
                     <div id="tree"></div>
                 </div>
+              <form style="display: none">
+                  <textarea id="area" rows="8"></textarea>
+                  <br>
+                  <br>
+                  <label title="can be slow with big files"><input type="checkbox" id="wantHex"> with hex dump</label>
+                  <label title="can be slow with big files"><input type="checkbox" id="trimHex" checked="checked"> trim big chunks</label>
+                  <label title="can be slow with big files"><input type="checkbox" id="wantDef" checked="checked"> with definitions</label>
+                  <input id="butDecode" type="button" value="decode">
+                  <input id="butClear" type="button" value="clear">
+                  <br><br>
+                  <table>
+                  <tr><td>Drag or load file:</td><td><input type="file" id="file"></td></tr>
+                  <tr><td>Load examples:</td><td>
+                      <select id="examples">
+                      </select>
+                      <input id="butExample" type="button" value="load"><br>
+                  </td></tr>
+                  <tr><td>Definitions:</td><td><select id="definitions"></select></td></tr>
+                  </table>
+                  <select id="tags"><option>[select tag]</option></select>
+              </form>
             </div>
-            <form style="display: none">
-                <textarea id="area" rows="8"></textarea>
-                <br>
-                <br>
-                <label title="can be slow with big files"><input type="checkbox" id="wantHex"> with hex dump</label>
-                <label title="can be slow with big files"><input type="checkbox" id="trimHex" checked="checked"> trim big chunks</label>
-                <label title="can be slow with big files"><input type="checkbox" id="wantDef" checked="checked"> with definitions</label>
-                <input id="butDecode" type="button" value="decode">
-                <input id="butClear" type="button" value="clear">
-                <select id="theme-select">
-                    <option value="os">OS Theme</option>
-                    <option value="dark">Dark Theme</option>
-                    <option value="light">Light Theme</option>
-                </select>
-                <br><br>
-                <table>
-                <tr><td>Drag or load file:</td><td><input type="file" id="file"></td></tr>
-                <tr><td>Load examples:</td><td>
-                    <select id="examples">
-                    </select>
-                    <input id="butExample" type="button" value="load"><br>
-                </td></tr>
-                <tr><td>Definitions:</td><td><select id="definitions"></select></td></tr>
-                </table>
-                <select id="tags"><option>[select tag]</option></select>
-            </form>
             <script type="module" src="indexVSCode.js"></script>
             </body>
             </html>`;
