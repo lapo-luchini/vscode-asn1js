@@ -31,7 +31,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^8.57.0"
+    "@eslint/compat": "^1.2.8",
+    "eslint": "^9.24.0"
   },
   "contributes": {
     "commands": [
