@@ -1,7 +1,7 @@
 const isDark = document.body.classList.contains('vscode-dark');
 localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-import * as web from './index.js';
+import * as web from './asn1js/index.js';
 
 const vscode = acquireVsCodeApi();
 

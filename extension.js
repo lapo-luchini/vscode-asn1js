@@ -46,7 +46,7 @@ function activate(context) {
 
         panel.onDidDispose(() => { panel = null; });
 
-        const onDiskPath = vscode.Uri.joinPath(context.extensionUri, 'static');
+        const onDiskPath = vscode.Uri.joinPath(context.extensionUri, 'static/asn1js');
         const baseURI = panel.webview.asWebviewUri(onDiskPath);
 
         panel.webview.html = `<!DOCTYPE html>
@@ -93,7 +93,7 @@ function activate(context) {
                   <select id="tags"><option>[select tag]</option></select>
               </form>
             </div>
-            <script type="module" src="indexVSCode.js"></script>
+            <script type="module" src="../indexVSCode.js"></script>
             </body>
             </html>`;
     }

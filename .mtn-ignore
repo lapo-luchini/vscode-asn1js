@@ -1,5 +1,6 @@
 [.]vscode$
-static/
+node_modules$
+static/asn1js/
 asn1js-[0-9.]+[.]vsix$
 # Artifacts from mirror_to_github.sh
 git-[^.]*[.]txt

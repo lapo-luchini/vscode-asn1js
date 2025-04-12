@@ -4,5 +4,6 @@ extension/
 .mtn-ignore
 .gitignore
 mirror_to_github.sh
+prepublish.js
 # Artifacts from mirror_to_github.sh
 git-*.txt

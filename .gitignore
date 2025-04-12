@@ -1,6 +1,7 @@
 _MTN/
 .vscode/
-static/
+node_modules/
+static/asn1js/
 asn1js-*.vsix
 # Artifacts from mirror_to_github.sh
 git-*.txt

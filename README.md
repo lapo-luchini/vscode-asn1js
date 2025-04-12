@@ -19,10 +19,8 @@ You can test (and develop) this extension locally with the following commands:
 
 ```sh
 $ git clone https://github.com/lapo-luchini/vscode-asn1js.git
-$ cd vscode-asn1js/static
-$ wget https://asn1js.eu/asn1js.zip
-$ unzip asn1js.zip
-$ rm -rf asn1js.zip examples index-local.html
+$ cd vscode-asn1js
+$ node prepublish
 ```
 
 You can now open the folder in VSCode and press F5 to execute a new VSCode session which includes the extension.
@@ -34,6 +32,10 @@ You can now open the folder in VSCode and press F5 to execute a new VSCode sessi
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
+
+### 0.2.0
+- Update to asn1js 2.0.5
+- Improve dependency packaging method
 
 ### 0.1.4
 - Properly ignore files

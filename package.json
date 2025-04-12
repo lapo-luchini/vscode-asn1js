@@ -3,7 +3,7 @@
   "displayName": "asn1js",
   "description": "Decode ASN.1 content",
   "publisher": "lapo",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "categories": [
     "Programming Languages"
   ],
@@ -25,6 +25,7 @@
   "icon": "icon.png",
   "main": "./extension.js",
   "scripts": {
+    "vscode:prepublish": "node prepublish",
     "lint": "eslint .",
     "pretest": "pnpm run lint",
     "test": "vscode-test"
@@ -32,6 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "@eslint/compat": "^1.2.8",
+    "adm-zip": "^0.5.16",
     "eslint": "^9.24.0"
   },
   "contributes": {
