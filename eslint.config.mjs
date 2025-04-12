@@ -13,7 +13,6 @@ export default defineConfig([
                 ...Object.fromEntries(Object.entries(globals.browser).map(([key]) => [key, "off"])),
                 ...globals.commonjs,
                 ...globals.node,
-                ...globals.mocha,
             },
 
             ecmaVersion: 2018,
@@ -35,5 +34,21 @@ export default defineConfig([
             "constructor-super": "warn",
             "valid-typeof": "warn",
         },
-    }
+    },
+    {
+        files: ['*.mjs'],
+        languageOptions: {
+            ecmaVersion: 2020,
+            sourceType: "module",
+        },
+    },
+    {
+        files: ['static/**'],
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                acquireVsCodeApi: 'readonly',
+            },
+        },
+    },
 ]);
