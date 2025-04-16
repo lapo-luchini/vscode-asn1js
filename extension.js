@@ -108,8 +108,14 @@ function activate(context) {
         panel.reveal();
 
         const editor = vscode.window.activeTextEditor;
-        if (editor)
-            panel.webview.postMessage({ command: 'decode', content: editor.document.getText() });
+        if (!editor) return;
+
+        let content;
+        if (editor.selection.isEmpty)
+            content = editor.document.getText();
+        else
+            content = editor.document.getText(editor.selection);
+        panel.webview.postMessage({ command: 'decode', content });
     });
 
     context.subscriptions.push(disposable);
