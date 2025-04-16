@@ -42,7 +42,15 @@
         "command": "asn1js.decode",
         "title": "Decode ASN.1"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceFilename =~ /[.](?:pem|b64)$/",
+          "command": "asn1js.decode"
+        }
+      ]
+    }
   },
   "activationEvents": []
 }

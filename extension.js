@@ -98,27 +98,30 @@ function activate(context) {
             </html>`;
     }
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('asn1js.decode', function () {
-        // The code you place here will be executed every time your command is executed
+    context.subscriptions.push(vscode.commands.registerCommand('asn1js.decode', async function (url) {
 
         createPanel();
         panel.reveal();
 
+        let content;
+
+        if (url && url instanceof vscode.Uri) {
+            content = await vscode.workspace.fs.readFile(url);
+            content = content.toString();
+            panel.webview.postMessage({ command: 'decode', content });
+            return;
+        }
+
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
 
-        let content;
         if (editor.selection.isEmpty)
             content = editor.document.getText();
         else
             content = editor.document.getText(editor.selection);
-        panel.webview.postMessage({ command: 'decode', content });
-    });
 
-    context.subscriptions.push(disposable);
+        panel.webview.postMessage({ command: 'decode', content });
+    }));
 }
 
 // This method is called when your extension is deactivated
