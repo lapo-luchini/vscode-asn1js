@@ -98,17 +98,20 @@ function activate(context) {
             </html>`;
     }
 
-    context.subscriptions.push(vscode.commands.registerCommand('asn1js.decode', async function (url) {
-
+    function showContent(content) {
         createPanel();
         panel.reveal();
+        panel.webview.postMessage({ command: 'decode', content });
+    }
+
+    context.subscriptions.push(vscode.commands.registerCommand('asn1js.decode', async function (url) {
 
         let content;
 
         if (url && url instanceof vscode.Uri) {
             content = await vscode.workspace.fs.readFile(url);
             content = Buffer.from(content).toString('binary');
-            panel.webview.postMessage({ command: 'decode', content });
+            showContent(content);
             return;
         }
 
@@ -120,7 +123,7 @@ function activate(context) {
         else
             content = editor.document.getText(editor.selection);
 
-        panel.webview.postMessage({ command: 'decode', content });
+        showContent(content);
     }));
 }
 
