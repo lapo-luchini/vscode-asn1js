@@ -107,7 +107,7 @@ function activate(context) {
 
         if (url && url instanceof vscode.Uri) {
             content = await vscode.workspace.fs.readFile(url);
-            content = content.toString();
+            content = Buffer.from(content).toString('binary');
             panel.webview.postMessage({ command: 'decode', content });
             return;
         }

@@ -10,7 +10,7 @@ window.addEventListener('message', event => {
     console.log('Received message', message);
     switch (message.command) {
     case 'decode':
-        web.decodeText(message.content);
+        web.decodeBinaryString(message.content);
         vscode.setState({ content: message.content });
         break;
     }
@@ -18,4 +18,4 @@ window.addEventListener('message', event => {
 
 const previousState = vscode.getState();
 if (previousState)
-    web.decodeText(previousState.content);
+    web.decodeBinaryString(previousState.content);

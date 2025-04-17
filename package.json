@@ -46,7 +46,7 @@
     "menus": {
       "explorer/context": [
         {
-          "when": "resourceFilename =~ /[.](?:pem|b64)$/",
+          "when": "resourceFilename =~ /[.](?:pem|der|cer|crt|p7m|p7s|p12|b64)$/",
           "command": "asn1js.decode"
         }
       ]
