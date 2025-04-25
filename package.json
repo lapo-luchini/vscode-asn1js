@@ -50,6 +50,17 @@
           "command": "asn1js.decode"
         }
       ]
+    },
+    "configuration": {
+      "title": "asn1js",
+      "type": "object",
+      "properties": {
+        "asn1js.side": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open the decoded ASN.1 window to the side"
+        }
+      }
     }
   },
   "activationEvents": [

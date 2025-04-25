@@ -81,10 +81,13 @@ function activate(context) {
     function createPanel() {
         if (panel) return;
 
+        const cfg = vscode.workspace.getConfiguration('asn1js');
+        console.log('Config', cfg);
+
         panel = vscode.window.createWebviewPanel(
             viewId,
             viewTitle,
-            vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+            cfg.side ? vscode.ViewColumn.Two : vscode.ViewColumn.One,
             {
                 enableScripts: true,
                 // Only allow the webview to access resources in our extension's media directory
