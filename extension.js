@@ -17,8 +17,8 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+const viewId = 'asn1js.view';
+const viewTitle = 'ASN.1 decode';
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -26,29 +26,9 @@ const vscode = require('vscode');
 function activate(context) {
     let panel = null;
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    //console.log('Congratulations, your extension "asn1js" is now active!');
-
-    function createPanel() {
-        if (panel) return;
-
-        panel = vscode.window.createWebviewPanel(
-            'asn1js.view', // Identifies the type of the webview. Used internally
-            'ASN.1 decode', // Title of the panel displayed to the user
-            vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-            {
-                enableScripts: true,
-                // Only allow the webview to access resources in our extension's media directory
-                localResourceRoots: [ vscode.Uri.joinPath(context.extensionUri, 'static') ],
-            },
-        );
-
-        panel.onDidDispose(() => { panel = null; });
-
+    function setViewContent(panel) {
         const onDiskPath = vscode.Uri.joinPath(context.extensionUri, 'static/asn1js');
         const baseURI = panel.webview.asWebviewUri(onDiskPath);
-
         panel.webview.html = `<!DOCTYPE html>
             <html data-theme="dark">
             <head>
@@ -98,11 +78,40 @@ function activate(context) {
             </html>`;
     }
 
+    function createPanel() {
+        if (panel) return;
+
+        panel = vscode.window.createWebviewPanel(
+            viewId,
+            viewTitle,
+            vscode.ViewColumn.One, // Editor column to show the new webview panel in.
+            {
+                enableScripts: true,
+                // Only allow the webview to access resources in our extension's media directory
+                localResourceRoots: [ vscode.Uri.joinPath(context.extensionUri, 'static') ],
+            },
+        );
+
+        panel.onDidDispose(() => { panel = null; });
+
+        setViewContent(panel);
+    }
+
     function showContent(content) {
         createPanel();
         panel.reveal();
         panel.webview.postMessage({ command: 'decode', content });
     }
+
+    class ViewSerializer {
+        async deserializeWebviewPanel(oldPanel, state) {
+            panel = oldPanel;
+            setViewContent(panel);
+            panel.webview.postMessage({ command: 'decode', content: state.content });
+        }
+    }
+
+    vscode.window.registerWebviewPanelSerializer(viewId, new ViewSerializer());
 
     context.subscriptions.push(vscode.commands.registerCommand('asn1js.decode', async function (url) {
 

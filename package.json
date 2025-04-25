@@ -52,5 +52,7 @@
       ]
     }
   },
-  "activationEvents": []
+  "activationEvents": [
+    "onWebviewPanel:asn1js.view"
+  ]
 }
