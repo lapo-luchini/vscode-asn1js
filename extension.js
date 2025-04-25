@@ -109,6 +109,7 @@ function activate(context) {
     class ViewSerializer {
         async deserializeWebviewPanel(oldPanel, state) {
             panel = oldPanel;
+            panel.onDidDispose(() => { panel = null; });
             setViewContent(panel);
             panel.webview.postMessage({ command: 'decode', content: state.content });
         }
