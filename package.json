@@ -46,7 +46,7 @@
     "menus": {
       "explorer/context": [
         {
-          "when": "resourceFilename =~ /[.](?:pem|der|cer|crt|p7m|p7s|p12|b64)$/",
+          "when": "config.asn1js.allExtensions || resourceFilename =~ /[.](?:pem|der|cer|crt|p7m|p7s|p12|b64)$/",
           "command": "asn1js.decode"
         }
       ]
@@ -55,6 +55,11 @@
       "title": "asn1js",
       "type": "object",
       "properties": {
+        "asn1js.allExtensions": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show the 'Decode ASN.1' option to all file extensions"
+        },
         "asn1js.side": {
           "type": "boolean",
           "default": true,
